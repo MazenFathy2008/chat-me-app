@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "chat-me-app-project"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "chat-me-app-project-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

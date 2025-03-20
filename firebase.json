@@ -1,0 +1,44 @@
+{
+  "emulators": {
+    "dataconnect": {
+      "dataDir": "dataconnect/.dataconnect/pgliteData",
+      "host": "127.0.0.1",
+      "port": 9499
+    },
+    "apphosting": {
+      "port": 5002,
+      "rootDirectory": "./frontend",
+      "startCommand": "npm start"
+    },
+    "auth": {
+      "host": "127.0.0.1",
+      "port": 9199
+    },
+    "firestore": {
+      "host": "127.0.0.1",
+      "port": 8180
+    },
+    "database": {
+      "host": "127.0.0.1",
+      "port": 9100
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  },
+  "dataconnect": {
+    "source": "dataconnect"
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "database": {
+    "rules": "database.rules.json"
+  }
+}
