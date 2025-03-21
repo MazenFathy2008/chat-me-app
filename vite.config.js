@@ -1,14 +1,15 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  root: "./", // الجذر الأساسي هو المجلد الحالي (مكان وجود index.html)
+  root: "./",
   server: {
     port: 5173,
     open: true,
   },
   build: {
-    outDir: "public", // عند البناء، يتم حفظ الملفات في `public/`
+    outDir: "public",
     sourcemap: true,
+    assetsDir: "assets", 
   },
   resolve: {
     alias: {

@@ -3,12 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles/primary.css">
+    <link rel="stylesheet" href="./src/styles/primary.css" />
+    <link rel="stylesheet" href="./src/styles/sign-in-page.css" />
     <title>ChatMe</title>
   </head>
-  <body>
-    <header>Welcome to ChatME App</header>
-    <form></form>
+  <body class="sign-in-bage">
+    <header>
+      <span>Welcome to ChatME App</span>
+    </header>
+    <div class="loading-animation"></div>
+    <main id="app">
+      <form>
+        <h1>Sign In</h1>
+        <div>
+          <label for="username-phone"
+            >Enter Your Username or Phone Number</label
+          >
+          <input id="username-phone" type="text" />
+          <span class="error-msg">please fill this fieald</span>
+        </div>
+        <div>
+          <label for="password">Enter Your Password
+            <span class="lock-password js-password-lock">
+              <img
+                src="./src/assets/lock_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+              />
+            </span>
+          </label>
+          <input id="password" type="password" />
+          
+          <span class="error-msg"> Wrong password or E-mail</span>
+        </div>
+        <button type="button">SIGN IN</button>
+      </form>
+    </main>
     <script type="module" src="./src/script/index.js"></script>
   </body>
 </html>
