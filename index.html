@@ -28,7 +28,12 @@
           <label for="username-phone"
             >Enter Your Username or Phone Number</label
           >
-          <input id="username-phone" type="tel"  autocomplete="off" />
+          <input
+            id="username-phone"
+            type="tel"
+            autocomplete="off"
+            maxlength="11"
+          />
           <span class="error-msg js-error-msg"></span>
         </div>
         <div class="js-input-field js-password-field">
@@ -40,7 +45,14 @@
               />
             </span>
           </label>
-          <input id="password" type="password" autocomplete="off" />
+          <input
+            id="password"
+            type="password"
+            autocomplete="off"
+            minlength="8"
+            maxlength="12"
+          
+          />
           <span class="error-msg js-error-msg"></span>
           <!-- Wrong password or E-mail -->
         </div>
