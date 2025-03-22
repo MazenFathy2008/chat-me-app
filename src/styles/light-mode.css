@@ -1,0 +1,40 @@
+.light-mode {
+  --bg-clr: linear-gradient(to right bottom,
+    rgb(255, 241, 233), 
+    rgb(255, 250, 230),  
+    rgb(240, 255, 240)); 
+
+  --txt-clr: rgb(50, 50, 50); 
+
+  --header-bg-clr: rgb(255, 230, 200);
+  --heade-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  --form-bg-clr: linear-gradient(to right bottom, 
+    rgba(255, 250, 230, 0.7),  
+    rgba(255, 241, 233, 0.8),  
+    rgba(240, 255, 240, 0.9));
+
+
+  --form-box-shadow: 0 0 8px rgba(200, 160, 120, 0.3); 
+  --form-dorder: 1px solid rgba(0, 0, 0, 0.1);
+
+
+  --signIn-btn-clr: linear-gradient(45deg, rgb(255, 170, 120), rgb(255, 140, 140));
+  --signIn-btn-boxShadow: 0 2px 6px rgba(255, 170, 120, 0.4), 0 4px 12px rgba(255, 140, 140, 0.3);
+  --signIn-btn-hover: 0 3px 8px rgba(255, 140, 140, 0.5), 0 6px 14px rgba(255, 170, 120, 0.4);
+  --signIn-btn-active: 0 4px 10px rgba(255, 140, 140, 0.6), 0 8px 16px rgba(255, 170, 120, 0.5);
+
+
+  --lock-btn-bg: linear-gradient(45deg, #4CAF50, #66BB6A); 
+  --lock-btn-shadow: 0 0 8px #4CAF50, 0 0 15px #66BB6A;
+  --lock-btn-hover-bg: linear-gradient(45deg, #81C784, #A5D6A7); 
+  --lock-btn-hover-shadow: 0 0 7px #81C784, 0 0 12px #A5D6A7;
+
+
+  --open-lock-btn-bg: linear-gradient(45deg, #d32f2f, #ff5252); 
+  --open-lock-bnt-shadow: 0 0 8px #d32f2f, 0 0 15px #ff5252;
+  --open-lock-hover-bg: linear-gradient(45deg, #ff3b3b, #ff6b6b); 
+  --open-lock-hover-shadow: 0 0 7px #ff3b3b, 0 0 12px #ff6b6b;
+}
+
+

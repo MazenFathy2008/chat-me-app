@@ -6,9 +6,8 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  color: #d8f3dc; 
-  background-color: #181820;
-  background: linear-gradient(to right bottom, #0d0d0d, #171721, #212136, #1a1a2e, #0f0f1f);
+  color: var(--txt-clr); 
+  background: var(--bg-clr);
 }
 
 header {
@@ -17,12 +16,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: center; 
-  background-color: #1b1b25;
+  background-color: var(--header-bg-clr);
   width: 100%;
   font-size: 1.5rem;
   font-weight: bold;
   height: 5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+  box-shadow: var(--heade-box-shadow); 
   white-space: nowrap;
 }
 input{

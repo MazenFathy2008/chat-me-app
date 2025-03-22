@@ -18,14 +18,10 @@
   align-items: center;
   width: 20rem;
   height: 100%;
-  box-shadow: 0 0 25px rgba(72, 180, 227, 0.2);
+  box-shadow: var(--form-box-shadow);
   border-radius: 25px;
-  background: linear-gradient(to right bottom, 
-  rgba(10, 10, 10, 0.2), 
-  rgba(25, 25, 35, 0.3), 
-  rgba(35, 35, 45, 0.4)
-);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--form-bg-clr);
+  border: var(--form-dorder);
 }
 .sign-in-bage h1{
   margin: 0;
@@ -56,25 +52,25 @@
 .sign-in-bage form .lock-password{
   width: 30px;
   height: 30px;
-  background: linear-gradient(45deg, #0097a7, #0055cc);
-  box-shadow: 0 0 12px #0097a7, 0 0 25px #0055cc;
+  background: var(--lock-btn-bg);
+  box-shadow: var(--lock-btn-shadow);
   border-radius: 50%;
   padding: 5px; 
   transition: all 0.25s;
+  cursor: pointer;
 }
 .sign-in-bage form .lock-password:hover{
-  background: linear-gradient(45deg, #00bcd4, #0077ff);
-  box-shadow: 0 0 10px #00bcd4, 0 0 20px #0077ff;
+  background: var(--lock-btn-hover-bg);
+  box-shadow: var(--lock-btn-hover-shadow );
 }
 .opend-lock-img{
-
-  background: linear-gradient(45deg, #d32f2f, #ff5252) !important;
-  box-shadow: 0 0 12px #d32f2f, 0 0 25px #ff5252 !important;
+  background: var(--open-lock-btn-bg) !important;
+  box-shadow: var(--open-lock-bnt-shadow) !important;
   transition: all 0.25s;
 }
 .opend-lock-img:hover{
-  background: linear-gradient(45deg, #ff3b3b, #ff6b6b) !important;
-  box-shadow: 0 0 10px #ff3b3b, 0 0 20px #ff6b6b !important;
+  background:var(--open-lock-hover-bg) !important;
+  box-shadow:var(--open-lock-hover-shadow) !important;
 }
 .lock-password img{
   width: 20px;
@@ -93,15 +89,17 @@
 }
 .sign-in-bage button {
   padding: 1rem;
-  background: linear-gradient(45deg, rgb(0, 212, 255), rgb(142, 68, 173));
-  box-shadow: 0 0 4px rgba(0, 212, 255, 0.3), 0 0 8px rgba(142, 68, 173, 0.3);
+  background: var(--signIn-btn-clr);
+  box-shadow:var(--signIn-btn-boxShadow);
   /* background: linear-gradient(45deg, #00bcd4, #ff4081); */
   border: none;
   border-radius: 8px;
+  transition: box-shadow 0.25s ;
+  cursor: pointer;
 }
 .sign-in-bage button:hover{
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5), 0 0 10px rgba(142, 68, 173, 0.4);
+  box-shadow: var(--signIn-btn-hover);
 }
 .sign-in-bage button:active{
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 14px rgba(142, 68, 173, 0.5);
+  box-shadow: var(--signIn-btn-active);
 }
