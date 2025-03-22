@@ -24,6 +24,9 @@ header {
   box-shadow: var(--heade-box-shadow); 
   white-space: nowrap;
 }
+button{
+  user-select: none;
+}
 button, 
 input, 
 label, 

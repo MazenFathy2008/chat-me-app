@@ -7,8 +7,8 @@ export default defineConfig({
     open: true,
   },
   build: {
-    outDir: "public",
-    sourcemap: true,
+    outDir: "dist",
+    // sourcemap: true,
     assetsDir: "assets", 
   },
   resolve: {

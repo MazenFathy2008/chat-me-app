@@ -79,6 +79,7 @@
   height: 20px;
   padding: 0.25rem;
   border-radius: 50%;
+  user-select: none;
 }
 .sign-in-bage form div span {
   width: 100%;
@@ -126,7 +127,7 @@
 }
 .slider::before{
   position: absolute;
-  content: url(../assets/dark_mode_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg);
+  content: url(/assets/dark_mode_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg);
   width: 2rem;
   height: 2rem;
   top: 0px;
@@ -142,7 +143,7 @@
   background-color:rgb(240, 255, 240)
 }
 .slider-check-box:checked + .slider::before{
-  content: url(../assets/light_mode_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg);
+  content: url(/assets/light_mode_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg);
   background-color:  rgb(255, 170, 120) !important; 
   transform: translate(1.747rem,0);
 }
