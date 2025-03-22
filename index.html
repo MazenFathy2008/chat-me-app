@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles/dark-mode.css" />
     <link rel="stylesheet" href="./src/styles/primary.css" />
     <link rel="stylesheet" href="./src/styles/sign-in-page.css" />
-    <link rel="stylesheet" href="./src/styles/light-mode.css" />
+    <link rel="stylesheet" href="./src/styles/theme/dark-mode.css" />
+    <link rel="stylesheet" href="./src/styles/theme/light-mode.css" />
     <title>ChatMe</title>
   </head>
   <body class="sign-in-bage">
@@ -14,7 +14,11 @@
       <span>Welcome to ChatME App</span>
     </header>
     <div class="switch-container">
-      <input type="checkbox" class="slider-check-box js-mode-slider" id="slider-check-box" />
+      <input
+        type="checkbox"
+        class="slider-check-box js-mode-slider"
+        id="slider-check-box"
+      />
       <label for="slider-check-box" class="slider"></label>
     </div>
     <main id="app">
@@ -42,6 +46,6 @@
         <button type="button">SIGN IN</button>
       </form>
     </main>
-    <script type="module" src="./src/script/index.js"></script>
+    <script type="module" src="./src/JS/index.js"></script>
   </body>
 </html>
