@@ -66,11 +66,13 @@
 .opend-lock-img{
   background: var(--open-lock-btn-bg) !important;
   box-shadow: var(--open-lock-bnt-shadow) !important;
-  transition: all 0.25s;
+  transition: 0.25s;
+
 }
 .opend-lock-img:hover{
   background:var(--open-lock-hover-bg) !important;
   box-shadow:var(--open-lock-hover-shadow) !important;
+
 }
 .lock-password img{
   width: 20px;
@@ -94,7 +96,7 @@
   /* background: linear-gradient(45deg, #00bcd4, #ff4081); */
   border: none;
   border-radius: 8px;
-  transition: box-shadow 0.25s ;
+  transition: 0.2s;
   cursor: pointer;
 }
 .sign-in-bage button:hover{
@@ -102,4 +104,53 @@
 }
 .sign-in-bage button:active{
   box-shadow: var(--signIn-btn-active);
+  opacity: 0.9;
+  transform: scale(0.96);
+}
+.switch-container{
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+.slider{
+  width: 4rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color:rgb(33, 33, 54); 
+  transition: 0.5s;
+}
+.slider::before{
+  position: absolute;
+  content: url(../assets/dark_mode_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg);
+  width: 2rem;
+  height: 2rem;
+  top: 0px;
+  left: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:   rgb(142, 68, 173);
+  transition: 0.5s;
+}
+.slider-check-box:checked + .slider {
+  background-color:rgb(240, 255, 240)
+}
+.slider-check-box:checked + .slider::before{
+  content: url(../assets/light_mode_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg);
+  background-color:  rgb(255, 170, 120) !important; 
+  transform: translate(1.747rem,0);
+}
+.slider-check-box{
+  visibility: hidden;
+}
+@media screen and (min-width:768px) {
+  header{
+    justify-content: center;
+  }
 }

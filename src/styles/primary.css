@@ -15,7 +15,7 @@ header {
   padding: 0.5rem;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: start; 
   background-color: var(--header-bg-clr);
   width: 100%;
   font-size: 1.5rem;
@@ -24,6 +24,10 @@ header {
   box-shadow: var(--heade-box-shadow); 
   white-space: nowrap;
 }
-input{
+button, 
+input, 
+label, 
+a {
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
