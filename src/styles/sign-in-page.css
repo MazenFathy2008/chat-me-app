@@ -89,6 +89,13 @@
 .sign-in-bage .error-msg{
   color: red;
   font-size: 0.725rem;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+.visable{
+  pointer-events: all;
+  opacity: 1 !important;
 }
 .sign-in-bage button {
   padding: 1rem;
