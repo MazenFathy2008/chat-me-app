@@ -28,8 +28,7 @@ export async function signIN() {
     console.log("less num of chars than excipectid");
   } else if (await authInfo(phoneNumber, password)) {
     console.log("data founded");
-  } else if (!(await addTodb(phoneNumber, password))) {
   } else {
-    console.log("phone number Alrady used");
+    await addTodb(phoneNumber, password);
   }
 }

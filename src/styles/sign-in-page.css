@@ -94,7 +94,7 @@
   pointer-events: none;
 }
 .visable{
-  pointer-events: all;
+  pointer-events: all !important;
   opacity: 1 !important;
 }
 .sign-in-bage button {
@@ -177,8 +177,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* opacity: 0;
-  pointer-events: none; */
+  opacity: 0;
+  pointer-events: none;
 }
 .popup{
   width: 20rem;
@@ -189,14 +189,18 @@
   flex-direction: column;
   border-radius: 10px;
   background: var(--signIn-btn-clr);
+  transition: 0.25s;
 }
 .popup h2{
   font-size: 1.25rem;
+  transition: 0.25s;
 }
 .popup-btn-container{
   width: 100%;
   display: flex;
   justify-content: space-around;
+  transition: 0.25s;
+
 }
 .popup-btn-container button{
   display: flex;
@@ -207,12 +211,17 @@
   width: 5rem;
   height: 2.5rem;
   white-space: nowrap;
+  transition: 0.25s;
 }
 .confirm{
   background: rgba(47, 255, 102, 0.7) !important;
+  transition: 0.25s;
+
 }
 .Not-Now{
   background: rgba(255, 0, 0, 0.781) !important;
+  transition: 0.25s;
+
 }
 .content{
   width: 100%;
@@ -221,4 +230,6 @@
   padding: 0 0 0 1.7rem;
   height: 7rem;
   justify-content: space-around;
+  transition: 0.25s;
+
 }
