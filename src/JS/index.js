@@ -11,13 +11,25 @@ import { filterInput } from "./utils/filter-input.js";
 import { checkLength } from "./auth/length-auth.js";
 import "./firebase/firebase.js";
 import { addTodb } from "./services/addUser.js";
+import { authInfo } from "./auth/email-password-auth.js";
 /*Second : The Main code*/
 changeVisabilty();
 changeMode();
 filterInput();
-document.querySelector("#sign-in").addEventListener("click", () => {
-  checkFormFields();
-  checkLength();
-
-  addTodb("+201005375709", "12mdoi3nie3idms3i");
-});
+export const signINBtn = document.querySelector("#sign-in");
+signINBtn.addEventListener("click", signIN);
+// +201005375709
+export async function signIN() {
+  const phoneNumber = document.querySelector("#username-phone").value;
+  const password = document.querySelector("#password").value;
+  if (!checkFormFields()) {
+    console.log("empty fields");
+  } else if (!checkLength()) {
+    console.log("less num of chars than excipectid");
+  } else if (await authInfo(phoneNumber, password)) {
+    console.log("data founded");
+  } else if (!(await addTodb(phoneNumber, password))) {
+  } else {
+    console.log("phone number Alrady used");
+  }
+}
