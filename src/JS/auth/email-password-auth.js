@@ -2,9 +2,14 @@ import { db } from "../firebase/firebase.js";
 import { get, ref } from "firebase/database";
 import bcrypt from "bcryptjs";
 
-export const authInfo = async (userPhoneNumber, userPassword) => {
-  const refrence = ref(db, `refrences/${userPhoneNumber}/password`);
+export const authInfo = async (userName, userPassword) => {
+  const refrence = ref(db, `refrences/${userName}/password`);
   const dataRefrencess = await get(refrence);
+  const errMsg = document
+    .querySelector(".js-password-field")
+    .querySelector(".js-error-msg");
+  errMsg.classList.remove("visable");
+
   if (dataRefrencess.exists()) {
     console.log("the data is Exist");
     if (bcrypt.compareSync(userPassword, dataRefrencess.val())) {
@@ -12,7 +17,9 @@ export const authInfo = async (userPhoneNumber, userPassword) => {
       return true;
     } else {
       console.log("password is wrong ");
-      return false;
+      errMsg.innerText = "Wrong Password";
+      errMsg.classList.add("visable");
+      return true;
     }
   } else {
     console.log("data not found ");

@@ -6,15 +6,15 @@ export const checkLength = () => {
       const inputField = container.querySelector("input");
       const errorMsgSpan = container.querySelector(".js-error-msg");
       if (
-        inputField.type === "tel" &&
-        inputField.value.length < 11 &&
+        inputField.dataset.for === "username" &&
+        inputField.value.length < 6 &&
         inputField.value.length !== 0
       ) {
-        errorMsgSpan.innerText = `You Entered ${inputField.value.length} You must Enter 11 Number`;
+        errorMsgSpan.innerText = `You Entered ${inputField.value.length} You must Enter at least 6 Charachters`;
         errorMsgSpan.classList.add("visable");
         passed = false;
       } else if (
-        (inputField.type === "password" || inputField.type === "text") &&
+        inputField.dataset.for === "password" &&
         inputField.value.length < 8 &&
         inputField.value.length !== 0
       ) {

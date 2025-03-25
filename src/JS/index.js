@@ -18,17 +18,15 @@ changeMode();
 filterInput();
 export const signINBtn = document.querySelector("#sign-in");
 signINBtn.addEventListener("click", signIN);
-// +201005375709
 export async function signIN() {
-  const phoneNumber = document.querySelector("#username-phone").value;
+  const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
-  if (!checkFormFields()) {
-    console.log("empty fields");
-  } else if (!checkLength()) {
-    console.log("less num of chars than excipectid");
-  } else if (await authInfo(phoneNumber, password)) {
-    console.log("data founded");
-  } else {
-    await addTodb(phoneNumber, password);
+  const passedFormEmpty = checkFormFields();
+  const passedFormmLength = checkLength();
+  if (passedFormEmpty && passedFormmLength) {
+    let passedFromAuth = await authInfo(username, password);
+    if (!passedFromAuth) {
+      await addTodb(username, password);
+    }
   }
 }

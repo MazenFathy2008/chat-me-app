@@ -25,12 +25,13 @@
       <form>
         <h1>Sign In</h1>
         <div class="js-input-field js-username-field">
-          <label for="username-phone"
-            >Enter Your Username or Phone Number</label
+          <label for="username"
+            >Enter Your Username</label
           >
           <input
-            id="username-phone"
-            type="tel"
+            id="username"
+            type="text"
+            data-for="username"
             autocomplete="off"
             maxlength="11"
           />
@@ -48,6 +49,7 @@
           <input
             id="password"
             type="password"
+            data-for="password"
             autocomplete="off"
             minlength="8"
             maxlength="12"
@@ -62,7 +64,7 @@
       <div class="popup">
         <h2>Do You want to creat accont ?</h2>
         <div class="content">
-          <p>By phone Number : <span class="number"></span></p>
+          <p>By Username : <span class="username"></span></p>
           <p>By Password : <span class="password"></span></p>
         </div>
         <div class="popup-btn-container">
