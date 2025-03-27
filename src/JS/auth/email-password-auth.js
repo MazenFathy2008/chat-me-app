@@ -1,9 +1,12 @@
 import { db } from "../firebase/firebase.js";
 import { get, ref } from "firebase/database";
 import bcrypt from "bcryptjs";
-
+//Check from the username and password from database (db)
 export const authInfo = async (userName, userPassword) => {
-  const refrence = ref(db, `refrences/${userName}/password`);
+  const refrence = ref(
+    db,
+    `refrences/${userName}/password`
+  ); /* refrence to the id and password*/
   const dataRefrencess = await get(refrence);
   const errMsg = document
     .querySelector(".js-password-field")

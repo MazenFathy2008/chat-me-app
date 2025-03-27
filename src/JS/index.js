@@ -13,20 +13,24 @@ import "./firebase/firebase.js";
 import { addTodb } from "./services/addUser.js";
 import { authInfo } from "./auth/email-password-auth.js";
 /*Second : The Main code*/
-changeVisabilty();
+/* Sign in page code */
 changeMode();
-filterInput();
-export const signINBtn = document.querySelector("#sign-in");
-signINBtn.addEventListener("click", signIN);
-export async function signIN() {
+const signedIn = true;
+async function signIN() {
   const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
   const passedFormEmpty = checkFormFields();
-  const passedFormmLength = checkLength();
-  if (passedFormEmpty && passedFormmLength) {
+  const passedFormLength = checkLength();
+  if (passedFormEmpty && passedFormLength) {
     let passedFromAuth = await authInfo(username, password);
     if (!passedFromAuth) {
       await addTodb(username, password);
     }
   }
+}
+if (signedIn) {
+  const signINBtn = document.querySelector("#sign-in");
+  changeVisabilty();
+  filterInput();
+  signINBtn.addEventListener("click", signIN);
 }
