@@ -23,8 +23,10 @@ async function signIN() {
   const passedFormLength = checkLength();
   if (passedFormEmpty && passedFormLength) {
     let passedFromAuth = await authInfo(username, password);
-    if (!passedFromAuth) {
+    if (passedFromAuth === false) {
       await addTodb(username, password);
+    }else if (passedFromAuth === "data founded" ){
+      console.log("Signed in")
     }
   }
 }

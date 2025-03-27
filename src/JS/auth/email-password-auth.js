@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 export const authInfo = async (userName, userPassword) => {
   const refrence = ref(
     db,
-    `refrences/${userName}/password`
+    `refrences/${userName}`
   ); /* refrence to the id and password*/
   const dataRefrencess = await get(refrence);
   const errMsg = document
@@ -15,14 +15,14 @@ export const authInfo = async (userName, userPassword) => {
 
   if (dataRefrencess.exists()) {
     console.log("the data is Exist");
-    if (bcrypt.compareSync(userPassword, dataRefrencess.val())) {
+    if (bcrypt.compareSync(userPassword, dataRefrencess.val().password)) {
       console.log("the password is correct");
-      return true;
+      return "data founded";
     } else {
       console.log("password is wrong ");
       errMsg.innerText = "Wrong Password";
       errMsg.classList.add("visable");
-      return true;
+      return "password wrong";
     }
   } else {
     console.log("data not found ");
