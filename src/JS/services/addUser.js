@@ -10,6 +10,7 @@ export async function addTodb(userName, password) {
   const refrances = ref(db, `refrences/${user.userName}`);
 
   const popupContainer = document.querySelector(".popup-container");
+  const popup = document.querySelector(".popup")
   popupContainer.querySelector(".username").innerText = userName;
   popupContainer.querySelector(".password").innerText = password;
   document.querySelector(".confirm").addEventListener("click", async () => {
@@ -18,11 +19,14 @@ export async function addTodb(userName, password) {
       password: user.password,
     });
     await set(refrenceToNewuser, user);
-    popupContainer.classList.remove("visable");
+    popupContainer.classList.remove("popup-visable");
+    popup.classList.remove("popup-animation")
   });
 
   document.querySelector(".Not-Now").addEventListener("click", () => {
-    popupContainer.classList.remove("visable");
+    popupContainer.classList.remove("popup-visable");
+    popup.classList.remove("popup-animation")
   });
-  popupContainer.classList.add("visable");
+  popupContainer.classList.add("popup-visable");
+  popup.classList.add("popup-animation")
 }
