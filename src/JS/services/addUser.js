@@ -10,8 +10,8 @@ export async function addTodb(userName, password) {
     const popupContainer = document.querySelector(".popup-container");
     popupContainer.querySelector(".username").innerText = userName;
     popupContainer.querySelector(".password").innerText = password;
-    document.querySelector(".confirm").addEventListener("click", () => {
-      set(refrances, {
+    document.querySelector(".confirm").addEventListener("click", async() => {
+      await set(refrances, {
         id: user.id,
         password: user.password,
       });

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./src/styles/sign-in-page.css" />
     <link rel="stylesheet" href="./src/styles/theme/dark-mode.css" />
     <link rel="stylesheet" href="./src/styles/theme/light-mode.css" />
+    <link rel="stylesheet" href="src/styles/pop-up.css">
     <title>ChatMe</title>
   </head>
   <body class="sign-in-bage">
@@ -25,9 +26,7 @@
       <form>
         <h1>Sign In</h1>
         <div class="js-input-field js-username-field">
-          <label for="username"
-            >Enter Your Username</label
-          >
+          <label for="username">Enter Your Username</label>
           <input
             id="username"
             type="text"
@@ -55,7 +54,6 @@
             maxlength="12"
           />
           <span class="error-msg js-error-msg"></span>
-          <!-- Wrong password or E-mail -->
         </div>
         <button type="button" id="sign-in">SIGN IN</button>
       </form>
