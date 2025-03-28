@@ -20,9 +20,9 @@
 
 
   --signIn-btn-clr: linear-gradient(45deg, rgb(255, 170, 120), rgb(255, 140, 140));
-  --signIn-btn-boxShadow: 0 2px 6px rgba(255, 170, 120, 0.4), 0 4px 12px rgba(255, 140, 140, 0.3);
-  --signIn-btn-hover: 0 3px 8px rgba(255, 140, 140, 0.5), 0 6px 14px rgba(255, 170, 120, 0.4);
-  --signIn-btn-active: 0 4px 10px rgba(255, 140, 140, 0.6), 0 8px 16px rgba(255, 170, 120, 0.5);
+  --signIn-btn-boxShadow: 0 0px 6px rgba(255, 170, 120, 0.4), 0 0px 12px rgba(255, 140, 140, 0.3);
+  --signIn-btn-hover: 0 0px 8px rgba(255, 140, 140, 0.5), 0 0px 14px rgba(255, 170, 120, 0.4);
+  --signIn-btn-active: 0 0px 10px rgba(255, 140, 140, 0.6), 0 0px 16px rgba(255, 170, 120, 0.5);
 
 
   --lock-btn-bg: linear-gradient(45deg, #4CAF50, #66BB6A); 
