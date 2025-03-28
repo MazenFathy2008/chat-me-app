@@ -13,11 +13,14 @@ import { addTodb } from "./services/addUser.js";
 import { authInfo } from "./auth/email-password-auth.js";
 import { prviousSining } from "./auth/previous-signing.js";
 import { getHtml } from "./pages.js";
+import { removeLoader, addLoader } from "./utils/loader.js";
+import { updateToMainPage } from "./services/get-main-html.js";
 /*Second : The Main code*/
 async function main() {
   changeMode();
   const html = await getHtml();
   document.querySelector("#app").innerHTML = html;
+  removeLoader();
   if (prviousSining) {
     console.log(prviousSining.id);
   } else {
@@ -26,6 +29,7 @@ async function main() {
     filterInput();
     signINBtn.addEventListener("click", signIN);
     async function signIN() {
+      addLoader();
       const username = document.querySelector("#username").value;
       const password = document.querySelector("#password").value;
       const passedFormEmpty = checkFormFields();
@@ -35,9 +39,11 @@ async function main() {
         if (passedFromAuth === false) {
           await addTodb(username, password);
         } else if (passedFromAuth === "data founded") {
+          updateToMainPage();
           console.log("Signed in");
         }
       }
+      removeLoader();
     }
   }
 }
