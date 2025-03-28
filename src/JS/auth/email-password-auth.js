@@ -17,6 +17,7 @@ export const authInfo = async (userName, userPassword) => {
     console.log("the data is Exist");
     if (bcrypt.compareSync(userPassword, dataRefrencess.val().password)) {
       console.log("the password is correct");
+      localStorage.setItem("signed-in", JSON.stringify(dataRefrencess.val()));
       return "data founded";
     } else {
       console.log("password is wrong ");

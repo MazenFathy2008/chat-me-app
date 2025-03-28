@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./src/styles/sign-in-page.css" />
     <link rel="stylesheet" href="./src/styles/theme/dark-mode.css" />
     <link rel="stylesheet" href="./src/styles/theme/light-mode.css" />
-    <link rel="stylesheet" href="src/styles/pop-up.css">
+    <link rel="stylesheet" href="src/styles/pop-up.css" />
     <title>ChatMe</title>
   </head>
   <body class="sign-in-bage">
@@ -22,55 +22,7 @@
       />
       <label for="slider-check-box" class="slider"></label>
     </div>
-    <main id="app">
-      <form>
-        <h1>Sign In</h1>
-        <div class="js-input-field js-username-field">
-          <label for="username">Enter Your Username</label>
-          <input
-            id="username"
-            type="text"
-            data-for="username"
-            autocomplete="off"
-            maxlength="11"
-          />
-          <span class="error-msg js-error-msg"></span>
-        </div>
-        <div class="js-input-field js-password-field">
-          <label for="password"
-            >Enter Your Password
-            <span class="lock-password js-password-lock" data-state="closed">
-              <img
-                src="/assets/lock_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
-              />
-            </span>
-          </label>
-          <input
-            id="password"
-            type="password"
-            data-for="password"
-            autocomplete="off"
-            minlength="8"
-            maxlength="12"
-          />
-          <span class="error-msg js-error-msg"></span>
-        </div>
-        <button type="button" id="sign-in">SIGN IN</button>
-      </form>
-    </main>
-    <div class="popup-container">
-      <div class="popup">
-        <h2>Do You want to creat account ?</h2>
-        <div class="content">
-          <p>By Username : <span class="username"></span></p>
-          <p>By Password : <span class="password"></span></p>
-        </div>
-        <div class="popup-btn-container">
-          <button class="confirm">Confirm</button>
-          <button class="Not-Now">Not Now</button>
-        </div>
-      </div>
-    </div>
+    <main id="app"></main>
     <script type="module" src="./src/JS/index.js"></script>
   </body>
 </html>
