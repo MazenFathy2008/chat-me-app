@@ -136,6 +136,7 @@
   transition: 0.3s;
   border-radius: 10px;
   user-select: none;
+  cursor: pointer;
 }
 .main-page nav ul li:active {
   opacity: 0.8;

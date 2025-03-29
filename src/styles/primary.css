@@ -30,6 +30,7 @@ header {
 }
 button{
   user-select: none;
+  cursor: pointer;
 }
 button:active{
   transform: scale(0.9);

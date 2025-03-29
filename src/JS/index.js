@@ -11,7 +11,7 @@ import { changeMode } from "./utils/change-mode.js";
 import { prviousSining } from "./auth/previous-signing.js";
 import { changeVisabilty } from "./utils/password-visabilty.js";
 import { filterInput } from "./utils/filter-input.js";
-import { removeLoader} from "./utils/loader.js";
+import { removeLoader } from "./utils/loader.js";
 /*Second : The Main code*/
 async function main() {
   changeMode();
