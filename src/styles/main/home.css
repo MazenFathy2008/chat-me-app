@@ -1,3 +1,6 @@
+.main-page{
+  transition: 0.25s;
+}
 .main-page main{
   box-sizing: border-box;
   padding-top:5rem;

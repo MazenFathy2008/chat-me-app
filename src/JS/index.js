@@ -4,17 +4,14 @@
 ########################
 */
 /*First: Importing Modules And  libraries*/
-import { changeVisabilty } from "./utils/password-visabilty.js";
-import { changeMode } from "./utils/change-mode.js";
-import { checkFormFields } from "./auth/empty-auth.js";
-import { filterInput } from "./utils/filter-input.js";
-import { checkLength } from "./auth/length-auth.js";
-import { addTodb } from "./services/addUser.js";
-import { authInfo } from "./auth/email-password-auth.js";
-import { prviousSining } from "./auth/previous-signing.js";
+import { mainApp } from "./main/main.js";
+import { signIN } from "./Sign-in/Sign-in.js";
 import { getHtml } from "./pages.js";
-import { removeLoader, addLoader } from "./utils/loader.js";
-import { updateToMainPage } from "./services/get-main-html.js";
+import { changeMode } from "./utils/change-mode.js";
+import { prviousSining } from "./auth/previous-signing.js";
+import { changeVisabilty } from "./utils/password-visabilty.js";
+import { filterInput } from "./utils/filter-input.js";
+import { removeLoader} from "./utils/loader.js";
 /*Second : The Main code*/
 async function main() {
   changeMode();
@@ -22,29 +19,12 @@ async function main() {
   document.querySelector("#app").innerHTML = html;
   removeLoader();
   if (prviousSining) {
-    console.log(prviousSining.id);
+    mainApp();
   } else {
     const signINBtn = document.querySelector("#sign-in");
     changeVisabilty();
     filterInput();
     signINBtn.addEventListener("click", signIN);
-    async function signIN() {
-      addLoader();
-      const username = document.querySelector("#username").value;
-      const password = document.querySelector("#password").value;
-      const passedFormEmpty = checkFormFields();
-      const passedFormLength = checkLength();
-      if (passedFormEmpty && passedFormLength) {
-        let passedFromAuth = await authInfo(username, password);
-        if (passedFromAuth === false) {
-          await addTodb(username, password);
-        } else if (passedFromAuth === "data founded") {
-          updateToMainPage();
-          console.log("Signed in");
-        }
-      }
-      removeLoader();
-    }
   }
 }
 main();

@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="./src/styles/pop-up.css" />
     <link rel="stylesheet" href="./src/styles/loader.css" />
     <link rel="stylesheet" href="./src/styles/main/nav.css" />
-    <link rel="stylesheet" href="./src/styles/main/primary.css" />
+    <link rel="stylesheet" href="./src/styles/main/home.css" />
     <title>ChatMe</title>
   </head>
-  <body>
+  <body class="main-page">
     <header>
       <span>Welcome to ChatME App</span>
     </header>
@@ -25,7 +25,22 @@
       />
       <label for="slider-check-box" class="slider"></label>
     </div>
-    <main id="app"></main>
+    <main id="app">
+      <button class="toggle-nav js-toggle-nav">
+        <span></span>
+      </button>
+      <nav class="js-nav">
+        <h1>UserName : <br /><span>Mazen-2008</span></h1>
+        <button class="add-freind">Find Friends</button>
+        <ul>
+          <h3>Friends</h3>
+          <li>User-203</li>
+          <li>User-304</li>
+          <li>mazen-309</li>
+          <li>hazem-309</li>
+        </ul>
+      </nav>
+    </main>
     <div id="loader-div" class="loader-visable">
       <div class="loader"></div>
     </div>
