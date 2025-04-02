@@ -2,6 +2,7 @@ import { NewUser } from "./new-user-class.js";
 import { db } from "../firebase/firebase.js";
 import { ref, set } from "firebase/database";
 import { updateToMainPage } from "./get-main-html.js";
+import { saveUserId } from "../../localStorage/User-id.js";
 // add users to database
 export async function addTodb(userName, password) {
   const user = new NewUser(userName, password);
@@ -21,7 +22,7 @@ export async function addTodb(userName, password) {
       id: user.id,
       password: user.password,
     });
-
+    saveUserId(user.id);
     await set(refrenceToNewuser, user);
 
     popupContainer.classList.remove("popup-visable");

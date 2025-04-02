@@ -1,6 +1,7 @@
 import { db } from "../firebase/firebase.js";
 import { get, ref } from "firebase/database";
 import bcrypt from "bcryptjs";
+import { saveUserId } from "../../localStorage/User-id.js";
 //Check from the username and password from database (db)
 export const authInfo = async (userName, userPassword) => {
   const refrence = ref(
@@ -17,6 +18,8 @@ export const authInfo = async (userName, userPassword) => {
     console.log("the data is Exist");
     if (bcrypt.compareSync(userPassword, dataRefrencess.val().password)) {
       console.log("the password is correct");
+      const id = dataRefrencess.val().id
+      saveUserId(id);
       localStorage.setItem("signed-in", JSON.stringify(dataRefrencess.val()));
       return "data founded";
     } else {
