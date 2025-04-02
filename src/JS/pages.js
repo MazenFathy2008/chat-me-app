@@ -10,7 +10,6 @@ export const getHtml = async () => {
     body.classList.add("main-page");
     refrence = ref(db, "templates/main");
     html = (await get(refrence)).val();
-    localStorage.setItem("main-page-html", html);
   } else {
     body.classList.remove("main-page");
     body.classList.add("sign-in-bage");

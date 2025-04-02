@@ -12,20 +12,22 @@ import { prviousSining } from "./auth/previous-signing.js";
 import { changeVisabilty } from "./utils/password-visabilty.js";
 import { filterInput } from "./utils/filter-input.js";
 import { removeLoader } from "./utils/loader.js";
+import { userId } from "../localStorage/User-id.js";
 /*Second : The Main code*/
 async function main() {
   changeMode();
   const html = await getHtml();
   document.querySelector("#app").innerHTML = html;
-  if (prviousSining) {
+  if (prviousSining && userId && prviousSining.id === userId) {
     mainApp();
   } else {
+    localStorage.removeItem("signed-in");
+    localStorage.removeItem("userId");
     const signINBtn = document.querySelector("#sign-in");
     changeVisabilty();
     filterInput();
     signINBtn.addEventListener("click", signIN);
   }
   removeLoader();
-
 }
 main();
