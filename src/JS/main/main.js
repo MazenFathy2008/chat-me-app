@@ -5,8 +5,8 @@ import {
   removeFindFriend,
 } from "./main-utils/add-friend.js";
 import { getInfo } from "./main-utils/get-info.js";
-export function mainApp() {
-  getInfo();
+export async function mainApp() {
+  await getInfo();
   toggleNav();
   filterFindInput();
   displayFindFriend();

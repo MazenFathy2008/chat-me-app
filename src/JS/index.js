@@ -17,7 +17,6 @@ async function main() {
   changeMode();
   const html = await getHtml();
   document.querySelector("#app").innerHTML = html;
-  removeLoader();
   if (prviousSining) {
     mainApp();
   } else {
@@ -26,5 +25,7 @@ async function main() {
     filterInput();
     signINBtn.addEventListener("click", signIN);
   }
+  removeLoader();
+
 }
 main();
