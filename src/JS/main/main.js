@@ -5,10 +5,12 @@ import {
   removeFindFriend,
 } from "./main-utils/add-friend.js";
 import { getInfo } from "./main-utils/get-info.js";
+import { addFriend } from "./main-services/add-friend.js";
 export async function mainApp() {
   await getInfo();
   toggleNav();
   filterFindInput();
   displayFindFriend();
   removeFindFriend();
+  addFriend();
 }

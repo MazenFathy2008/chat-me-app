@@ -89,7 +89,7 @@
   height: 1.5rem;
 }
 
-.sign-in-bage .error-msg{
+.error-msg{
   color: red;
   font-size: 0.725rem;
   opacity: 0;

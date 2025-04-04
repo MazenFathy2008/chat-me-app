@@ -18,7 +18,7 @@ async function main() {
   changeMode();
   const html = await getHtml();
   document.querySelector("#app").innerHTML = html;
-  if (prviousSining && userId && prviousSining.id === userId) {
+  if (prviousSining && userId && prviousSining.id === JSON.parse(userId)) {
     mainApp();
   } else {
     localStorage.removeItem("signed-in");

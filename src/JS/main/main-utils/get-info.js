@@ -1,12 +1,14 @@
 import { userId } from "../../../localStorage/User-id";
 import { db } from "../../firebase/firebase";
 import { get, ref } from "firebase/database";
-export async function getInfo() {
+export async function getInfo(withUserName = true) {
   const id = JSON.parse(userId);
   const userInfoRef = ref(db, `Users/${id}`);
   const userInfo = (await get(userInfoRef)).val();
-  userNameNav(userInfo.userName);
-  const contacts = userInfo.contacts || {}
+  if (withUserName) {
+    userNameNav(userInfo.userName);
+  }
+  const contacts = userInfo.contacts || {};
   friendsListNav(contacts);
 }
 function userNameNav(userName) {
@@ -15,12 +17,22 @@ function userNameNav(userName) {
   userNameSpan.innerText = userName;
   userNameElement.appendChild(userNameSpan);
 }
-function friendsListNav(friendsList) {
+export async function friendsListNav(friendsList) {
   const friendsListElements = document.querySelector(".js-friends-list");
+  const friends = document.querySelectorAll(".js-friend");
+  friends.forEach((friend) => {
+    friendsListElements.removeChild(friend);
+  });
   const friendsNamesArray = Object.keys(friendsList);
-  friendsNamesArray.forEach((friend) => {
+  friendsNamesArray.forEach(async (friend) => {
+    const friendRef = ref(
+      db,
+      `Users/${JSON.parse(userId)}/contacts/${friend}/userName`
+    );
+    const friendUserName = (await get(friendRef)).val();
     const newFriendLi = document.createElement("li");
-    newFriendLi.innerText = friend;
+    newFriendLi.classList.add("js-friend");
+    newFriendLi.innerText = friendUserName;
     friendsListElements.appendChild(newFriendLi);
   });
 }
