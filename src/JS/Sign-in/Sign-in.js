@@ -1,10 +1,12 @@
-import { addLoader , removeLoader } from "../utils/loader.js";
+import { addLoader, removeLoader } from "../utils/loader.js";
 import { updateToMainPage } from "../services/get-main-html.js";
 import { authInfo } from "../auth/email-password-auth.js";
 import { addTodb } from "../services/addUser.js";
 import { checkLength } from "../auth/length-auth.js";
 import { checkFormFields } from "../auth/empty-auth.js";
-export async function signIN() {
+import { changeVisabilty } from "../utils/password-visabilty.js";
+import { filterInput } from "../utils/filter-input.js";
+async function signIN() {
   addLoader();
   const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
@@ -20,4 +22,12 @@ export async function signIN() {
     }
   }
   removeLoader();
+}
+export function mainSignIn() {
+  localStorage.removeItem("signed-in");
+  localStorage.removeItem("userId");
+  const signINBtn = document.querySelector("#sign-in");
+  changeVisabilty();
+  filterInput();
+  signINBtn.addEventListener("click", signIN);
 }

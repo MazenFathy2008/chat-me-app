@@ -6,6 +6,7 @@ import {
 } from "./main-utils/add-friend.js";
 import { getInfo } from "./main-utils/get-info.js";
 import { addFriend } from "./main-services/add-friend.js";
+import { logOut } from "./main-services/log-out.js";
 export async function mainApp() {
   await getInfo();
   toggleNav();
@@ -13,4 +14,5 @@ export async function mainApp() {
   displayFindFriend();
   removeFindFriend();
   addFriend();
+  logOut();
 }
