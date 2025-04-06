@@ -7,7 +7,9 @@ import {
 import { getInfo } from "./main-utils/get-info.js";
 import { addFriend } from "./main-services/add-friend.js";
 import { logOut } from "./main-services/log-out.js";
+import { changeHistory } from "../services/history-push.js";
 export async function mainApp() {
+  changeHistory("main-page")
   await getInfo();
   toggleNav();
   filterFindInput();
