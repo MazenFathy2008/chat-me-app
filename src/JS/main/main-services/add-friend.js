@@ -41,7 +41,14 @@ export async function addFriend() {
           chatKey: chatKey,
         });
         getInfo(false);
+        const chatRefrence = ref(db, `chats/${chatKey}`);
+        await set(chatRefrence, {
+          user1: yourName,
+          user2: friendName,
+          chat: [],
+        });
       }
+
       popup.classList.remove("popup-visable");
     } else if (myId === friendId.val()) {
       errMsgElement.innerText = "this is you stubid";

@@ -7,6 +7,7 @@ import { checkFormFields } from "../auth/empty-auth.js";
 import { changeVisabilty } from "../utils/password-visabilty.js";
 import { filterInput } from "../utils/filter-input.js";
 import { changeHistory } from "../services/history-push.js";
+import { clearData } from "../../localStorage/clear-data.js";
 async function signIN() {
   addLoader();
   const username = document.querySelector("#username").value;
@@ -25,9 +26,8 @@ async function signIN() {
   removeLoader();
 }
 export function mainSignIn() {
-  changeHistory("SIGN-IN")
-  localStorage.removeItem("signed-in");
-  localStorage.removeItem("userId");
+  changeHistory("SIGN-IN");
+  clearData();
   const signINBtn = document.querySelector("#sign-in");
   changeVisabilty();
   filterInput();
