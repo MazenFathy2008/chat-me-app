@@ -90,6 +90,7 @@
   gap: 1rem;
   
 }
+.main-page section div button,
 .main-page nav .add-freind{
   color: inherit;
   width: 7rem;
@@ -106,6 +107,7 @@
   border: none;
   transition: 0.3s;
 }
+.main-page section div button,
 .main-page nav .add-freind:active{
   box-shadow: var(--signIn-btn-active);
 }
@@ -201,6 +203,7 @@
   .toggle-nav:hover{
     box-shadow: var(--signIn-btn-hover);
   }
+  .main-page section div button,
   .main-page nav .add-freind:hover{
     box-shadow: var(--signIn-btn-hover);
   }
