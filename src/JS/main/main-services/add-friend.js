@@ -40,7 +40,7 @@ export async function addFriend() {
           userName: friendName,
           chatKey: chatKey,
         });
-        getInfo(false);
+        // getInfo(false);
         const chatRefrence = ref(db, `chats/${chatKey}`);
         await set(chatRefrence, {
           user1: yourName,
