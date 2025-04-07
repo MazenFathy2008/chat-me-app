@@ -11,10 +11,9 @@ export async function getInfo(withUserName = true) {
     userNameNav(userInfo.userName);
   }
   const contacts = userInfo.contacts || {};
-  friendsListNav(contacts);
+  friendsListNav(contacts, userInfo.userName);
   if (lastChat) {
-    console.log(lastChat)
-    getChat(lastChat.chatKey, lastChat.friendName);
+    getChat(lastChat.chatKey, lastChat.friendName , userInfo.userName);
   }
 }
 
@@ -25,7 +24,7 @@ function userNameNav(userName) {
   userNameElement.appendChild(userNameSpan);
 }
 
-export async function friendsListNav(friendsList) {
+export async function friendsListNav(friendsList, yourName) {
   const friendsListElements = document.querySelector(".js-friends-list");
   const friends = document.querySelectorAll(".js-friend");
   friends.forEach((friend) => {
@@ -41,12 +40,12 @@ export async function friendsListNav(friendsList) {
     newFriendLi.classList.add("js-friend");
     newFriendLi.innerText = friendUserName;
     friendsListElements.appendChild(newFriendLi);
-    startChat(newFriendLi, friendChatId, friendUserName);
+    startChat(newFriendLi, friendChatId, friendUserName, yourName);
   });
 }
 
-function startChat(friendLink, chatKey, friendName) {
+function startChat(friendLink, chatKey, friendName, yourName) {
   friendLink.addEventListener("click", () => {
-    getChat(chatKey, friendName);
+    getChat(chatKey, friendName, yourName);
   });
 }
