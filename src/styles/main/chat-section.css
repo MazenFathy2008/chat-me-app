@@ -27,10 +27,26 @@
   margin: 1rem 0;
   min-height: 2rem;
   padding: 1rem;
-  width: 35%;
-  max-width: 35%;
+  min-width: 50%;
+  max-width: 80%;
   border: black 1px solid;
   box-shadow: var(--signIn-btn-boxShadow);
+}
+.main-page section ul li span{
+  padding: 1rem;
+  width: 60%;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 1rem;
+  background: var(--signIn-btn-clr);
+}
+.main-page section ul li p{
+  word-wrap: break-word ;
+  padding-left: 1rem;
+  margin: 0;
+  margin-top: 1rem;
 }
 .main-page section ul .from-me{
   border-color: red;
@@ -41,16 +57,17 @@
 }
 .main-page section div{
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  bottom: 0rem;
+  bottom: 1rem;
   height: 2rem;
   left: 25%;
   right: 25%;
 }
 .main-page section div input{
+  overflow-y: auto;
   box-sizing: border-box;
   width: 70%;
   height: 100%;

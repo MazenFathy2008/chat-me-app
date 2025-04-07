@@ -1,12 +1,19 @@
 import { db } from "../../firebase/firebase";
-import { ref, set, push, get } from "firebase/database";
+import { ref, push } from "firebase/database";
 export function sendMsg(friendName, yourName, chatKey) {
   const msgInputElement = document.querySelector(".js-msg-input");
   msgInputElement.addEventListener("input", () => {
+    const value = msgInputElement.value.trim();
+
+    if (/^[\u0600-\u06FF]/.test(value)) {
+      msgInputElement.style.direction = 'rtl';
+    } else {
+      msgInputElement.style.direction = 'ltr';
+    }
     msgInputElement.value = msgInputElement.value.trimStart();
+    msgInputElement.scrollTop = msgInputElement.scrollHeight;
   });
   const sendBtn = document.querySelector(".js-send-btn");
-  console.log(sendBtn);
   sendBtn.addEventListener("click", () => {
     sendMsgLogic(friendName, yourName, chatKey);
   });
@@ -22,11 +29,6 @@ async function sendMsgLogic(friendName, yourName, chatKey) {
       from: yourName,
       content: msg,
     });
-
-    const msgElement = document.createElement("li");
-    msgElement.innerText = `From : ${yourName} \n \n  ${msg}`;
-    msgElement.classList.add("from-me");
-    chatListElement.appendChild(msgElement);
   }
   msgInputElement.value = "";
 }
